@@ -15,7 +15,7 @@ class Memento < Sinatra::Base
       config = YAML::load(File.read(opts[:config_file]))
       server = config['server']
       if server.nil? || (@host, @port = server.split(':')).size != 2
-        raise StandardError, "You must specify a Memcache server with the following format: host:port"
+        raise StandardError, "You must specify a Memcached server with the following format: host:port"
       end
     end
   end
